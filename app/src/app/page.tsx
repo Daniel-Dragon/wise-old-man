@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { formatNumber } from "@wise-old-man/utils";
 import { apiClient } from "~/services/wiseoldman";
-import { Button } from "~/components/Button";
+import { Button, ButtonLink } from "~/components/Button";
 import { HeroPlayerForm } from "~/components/home/HeroPlayerForm";
 
 import GroupsChangesImage from "../../public/img/homepage_groups_changes.png";
@@ -257,24 +257,24 @@ function DiscordSection() {
           <h2 className="max-w-xs text-2xl font-semibold leading-[2.75rem] sm:text-3xl">
             Get all your clan updates on Discord
           </h2>
-          <div className="mb-8 mt-7 flex flex-col gap-y-3">
-            <div className="flex items-center gap-x-3">
+          <ul className="mb-8 mt-7 flex flex-col gap-y-3">
+            <li className="flex items-center gap-x-3">
               <Image src={WomPhatImage} alt="" />
               <span className="text-sm text-gray-100">Updates on competitions</span>
-            </div>
-            <div className="flex items-center gap-x-3">
+            </li>
+            <li className="flex items-center gap-x-3">
               <Image src={WomPhatImage} alt="" />
               <span className="text-sm text-gray-100">New member achievements</span>
-            </div>
-            <div className="flex items-center gap-x-3">
+            </li>
+            <li className="flex items-center gap-x-3">
               <Image src={WomPhatImage} alt="" />
               <span className="text-sm text-gray-100">HCIM Deaths</span>
-            </div>
-            <div className="flex items-center gap-x-3">
+            </li>
+            <li className="flex items-center gap-x-3">
               <Image src={WomPhatImage} alt="" />
               <span className="text-sm text-gray-100">Member list changes</span>
-            </div>
-          </div>
+            </li>
+          </ul>
           <a
             className="flex gap-x-2 rounded-full border px-4 py-2 text-xs hover:bg-white/5"
             href="https://wiseoldman.net/discord"
@@ -361,8 +361,8 @@ function HowItWorksSection() {
   return (
     <section className="mx-auto mt-10 flex max-w-[calc(100vw-1.25rem)] flex-col items-center bg-howto-gradient px-5 py-[5rem] md:px-10 lg:max-w-5xl">
       <h2 className="text-2xl font-bold md:text-4xl">How does it work?</h2>
-      <div className="mt-16 flex max-w-2xl flex-col md:w-full">
-        <div className="flex w-full gap-x-8">
+      <ol className="mt-16 flex max-w-2xl flex-col md:w-full">
+        <li className="flex w-full gap-x-8">
           <div className="relative mt-10">
             <div className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-blue-500 bg-gray-900 text-base">
               1
@@ -374,8 +374,8 @@ function HowItWorksSection() {
             description="Request an update to your profile via the website, the RuneLite plugin or the Discord bot."
             image={HowToStep1Image}
           />
-        </div>
-        <div className="flex w-full gap-x-8">
+        </li>
+        <li className="flex w-full gap-x-8">
           <div className="relative">
             <div className="relative z-10 mt-10 flex h-9 w-9 items-center justify-center rounded-full border border-blue-500 bg-gray-900 text-base">
               2
@@ -387,8 +387,8 @@ function HowItWorksSection() {
             description="We'll check your hiscores page and store your current stats on our end."
             image={HowToStep2Image}
           />
-        </div>
-        <div className="flex w-full gap-x-8">
+        </li>
+        <li className="flex w-full gap-x-8">
           <div className="relative">
             <div className="relative z-10 mt-10 flex h-9 w-9 items-center justify-center rounded-full border border-blue-500 bg-gray-900 text-base">
               3
@@ -400,8 +400,8 @@ function HowItWorksSection() {
             description="Using this historical data, we can now calculate your gains, records, achievements, etc."
             image={HowToStep3Image}
           />
-        </div>
-      </div>
+        </li>
+      </ol>
     </section>
   );
 }
@@ -415,16 +415,10 @@ function CommunitySection() {
         code or ideas to add new functionality.
       </p>
       <div className="flex flex-col items-center gap-5 md:flex-row">
-        <a
-          href="https://wiseoldman.net/github"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button>
-            <GitHubIcon className="-ml-2 h-4 w-4" />
-            Contribute on GitHub
-          </Button>
-        </a>
+        <ButtonLink href="https://wiseoldman.net/github">
+          <GitHubIcon className="-ml-2 h-4 w-4" />
+          Contribute on GitHub
+        </ButtonLink>
         <a
           href="https://wiseoldman.net/discord"
           target="_blank"
